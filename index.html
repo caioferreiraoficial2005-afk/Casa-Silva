@@ -113,6 +113,20 @@ nav.solid .nav-links a.res{background:var(--verde);border-color:var(--verde);col
 .end{margin-top:26px;font-size:14px;line-height:1.6;color:var(--cinza)}
 .moldura.v::before{left:-28px;right:28px;background:var(--verde)}
 
+/* PRAIAS POR PERTO */
+.praias{background:var(--creme);padding:clamp(100px,11vw,160px) clamp(20px,5vw,80px) clamp(90px,9vw,130px)}
+.pr-top{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,80px);align-items:end}
+.pr-top p{font-size:17px;line-height:1.75;color:#4a4f58;max-width:420px}
+.pr-grid{max-width:1280px;margin:clamp(46px,5vw,70px) auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px)}
+.pr{position:relative;aspect-ratio:3/4.3;overflow:hidden;color:#fff;background:var(--verde)}
+.pr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pr::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,22,44,0) 45%,rgba(6,22,44,.82) 100%)}
+.pr .dist{position:absolute;z-index:2;top:16px;left:16px;padding:8px 13px;background:rgba(245,240,231,.94);color:var(--verde);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.pr-t{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:clamp(20px,2vw,28px)}
+.pr h3{font-family:"Cormorant",serif;font-weight:600;font-size:clamp(28px,2.4vw,38px);line-height:1}
+.pr p{margin-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,.88)}
+.pr-pe{max-width:1280px;margin:34px auto 0;padding-top:22px;border-top:1px solid var(--linha);display:flex;justify-content:space-between;gap:20px;font-size:14px;color:var(--cinza)}
+
 /* AVALIAÇÕES */
 .aval{background:var(--areia);padding:clamp(100px,10vw,150px) clamp(20px,5vw,80px);text-align:center}
 .nota{display:inline-flex;align-items:center;gap:16px;margin-top:26px}
@@ -173,6 +187,12 @@ footer .c3{text-align:right}
   .cafe .bloco{position:relative;right:auto;top:auto;transform:none;width:auto;margin:0 16px 0}
   .lg .moldura{order:-1}
   .lista span{max-width:46%}
+  .pr-top{grid-template-columns:1fr;text-align:center}
+  .pr-top p{margin:0 auto}
+  .pr-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-left:-20px;margin-right:-20px;padding:0 20px 6px;scrollbar-width:none}
+  .pr-grid::-webkit-scrollbar{display:none}
+  .pr{flex:0 0 78%;scroll-snap-align:center}
+  .pr-pe{flex-direction:column;text-align:center;gap:8px}
   .deps{grid-template-columns:1fr;max-width:460px}
   footer{grid-template-columns:1fr;text-align:center}
   footer .marca{text-align:center}
@@ -188,7 +208,7 @@ footer .c3{text-align:right}
 
 <nav id="nav">
   <a class="marca" href="#topo"><img src="assets/logo-casa-silva-nav.svg" alt="Pousada Casa Silva"></a>
-  <div class="nav-links"><a href="#quartos">Quartos</a><a href="#terraco">Terraço</a><a href="#local">Localização</a><a href="#avaliacoes">Avaliações</a><a class="res" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20fazer%20uma%20reserva%20na%20Casa%20Silva.">Reservar</a></div>
+  <div class="nav-links"><a href="#quartos">Quartos</a><a href="#terraco">Terraço</a><a href="#local">Praias</a><a href="#avaliacoes">Avaliações</a><a class="res" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20fazer%20uma%20reserva%20na%20Casa%20Silva.">Reservar</a></div>
 </nav>
 
 <header class="capa" id="topo">
@@ -255,21 +275,21 @@ footer .c3{text-align:right}
   </div>
 </section>
 
-<section class="local" id="local">
-  <div class="lg">
-    <div class="txt">
-      <span class="k">Localização</span>
-      <h2 class="split sec-t">Perto de tudo, longe do barulho</h2>
-      <div class="lista fade">
-        <div><b>Praia de Jacarecica</b><span>piscinas naturais na maré baixa</span></div>
-        <div><b>Parque Shopping Maceió</b><span>compras e restaurantes</span></div>
-        <div><b>Mercados e farmácias</b><span>tudo pertinho</span></div>
-        <div><b>Orla de Maceió</b><span>Ponta Verde e Pajuçara</span></div>
-      </div>
-      <p class="end fade">R. Vista do Atlântico, 180 · Jacarecica, Maceió · AL</p>
+<section class="praias" id="local">
+  <div class="pr-top">
+    <div>
+      <span class="k">Praias por perto</span>
+      <h2 class="split sec-t">As praias mais bonitas de Maceió, a poucos minutos</h2>
     </div>
-    <div class="moldura v fade"><img src="assets/praia.jpg" alt="Praia de Jacarecica com piscinas naturais" loading="lazy"></div>
+    <p class="fade">Jacarecica fica logo ali embaixo. E a orla mais famosa da cidade, de Jatiúca à Pajuçara, fica a uns 15 minutos de carro.</p>
   </div>
+  <div class="pr-grid">
+    <article class="pr"><img src="assets/vista-v.jpg" alt="Vista da Casa Silva para a praia de Jacarecica" loading="lazy" style="object-position:50% 4%"><span class="dist">Logo ali embaixo</span><div class="pr-t"><h3>Jacarecica</h3><p>A praia do bairro, tranquila, pra começar o dia com uma caminhada</p></div></article>
+    <article class="pr"><img src="assets/praia-jatiuca.jpg" alt="Orla da praia de Jatiúca" loading="lazy" style="object-position:55% 50%"><span class="dist">a 4 km</span><div class="pr-t"><h3>Jatiúca</h3><p>Calçadão, quiosques e restaurantes de frente pro mar</p></div></article>
+    <article class="pr"><img src="assets/praia-ponta-verde.jpg" alt="Farol no mar da Ponta Verde" loading="lazy" style="object-position:35% 50%"><span class="dist">a 6 km</span><div class="pr-t"><h3>Ponta Verde</h3><p>O mar verde-água e o farolzinho no meio do mar</p></div></article>
+    <article class="pr"><img src="assets/praia-pajucara.jpg" alt="Praia da Pajuçara com jangadas vista de cima" loading="lazy" style="object-position:60% 50%"><span class="dist">a 7 km</span><div class="pr-t"><h3>Pajuçara</h3><p>De onde saem as jangadas para as piscinas naturais</p></div></article>
+  </div>
+  <div class="pr-pe fade"><span>R. Vista do Atlântico, 180 · Jacarecica, Maceió · AL</span><span>Parque Shopping, mercados e farmácias também ficam pertinho</span></div>
 </section>
 
 <section class="aval" id="avaliacoes">
@@ -359,6 +379,9 @@ gsap.fromTo('.terraco',{clipPath:'inset(10% 0% 10% 0%)'},{clipPath:'inset(0% 0% 
 
 // CAFÉ: o bloco azul entra pela direita
 gsap.from('.cafe .bloco',{xPercent:12,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.cafe',start:'top 60%'}});
+
+// PRAIAS: cartões entram um depois do outro
+gsap.from('.pr',{opacity:0,y:40,duration:1.4,ease:'power3.out',stagger:.12,scrollTrigger:{trigger:'.pr-grid',start:'top 85%'}});
 
 window.addEventListener('load',()=>ScrollTrigger.refresh());
 </script>
