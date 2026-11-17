@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Silva · Pousada em Jacarecica, Maceió</title>
+<meta name="description" content="Pousada nova e tranquila em Jacarecica, Maceió, com piscina no terraço, vista para o mar e café da manhã caseiro.">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jost-latin-400-normal.woff2" crossorigin>
+<style>
+@font-face{font-family:"Cormorant";src:url(assets/fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(assets/fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(assets/fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Jost";src:url(assets/fonts/jost-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Jost";src:url(assets/fonts/jost-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Jost";src:url(assets/fonts/jost-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--creme:#f5f0e7;--areia:#e9dfcd;--verde:#0f335e;--verde2:#0a2547;--terra:#a9844b;--ouro:#d6b47c;--mar:#15508f;--tinta:#1f2a3a;--cinza:#5f6672;--linha:rgba(31,42,58,.2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--creme)}
+body{font-family:"Jost",sans-serif;color:var(--tinta);background:var(--creme);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.serif{font-family:"Cormorant",serif}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.wi{display:inline-block;will-change:transform}
+.k{display:block;font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 30px;background:var(--verde);color:#fff;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-radius:0;transition:background .3s}
+.btn:hover{background:var(--terra)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+.btn.cl{background:var(--creme);color:var(--verde)}
+.btn.cl:hover{background:#fff}
+.btn.tr{background:var(--ouro);color:var(--verde)}.btn.tr:hover{background:var(--creme)}
+
+/* NAV simples: transparente na capa, creme ao rolar (logo em dourado mais fechado pra ler no claro) */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px clamp(20px,4vw,56px);color:#fff;transition:background .45s,color .45s,padding .45s,box-shadow .45s}
+nav.solid{background:rgba(245,240,231,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--tinta);padding-top:10px;padding-bottom:10px;box-shadow:0 1px 0 var(--linha)}
+.marca img{height:62px;width:auto;transition:height .45s;filter:drop-shadow(0 2px 10px rgba(5,20,45,.45))}
+nav.solid .marca img{height:50px;filter:none}
+.marca{transition:opacity .45s}
+nav:not(.solid) .marca{opacity:0;pointer-events:none}
+.marca{line-height:1}
+.marca b{display:block;font-family:"Cormorant",serif;font-weight:600;font-size:30px;letter-spacing:.01em}
+.marca small{display:block;margin-top:3px;font-size:9.5px;letter-spacing:.34em;opacity:.8}
+.nav-links{display:flex;align-items:center;gap:clamp(18px,2.4vw,38px)}
+.nav-links a{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;opacity:.92}
+.nav-links a:hover{opacity:1}
+.nav-links a.res{opacity:1;padding:12px 20px;border:1px solid currentColor}
+nav.solid .nav-links a.res{background:var(--verde);border-color:var(--verde);color:#fff}
+
+/* CAPA */
+.capa{position:relative;height:100vh;min-height:640px;overflow:hidden;color:#fff}
+.capa-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:contrast(1.12) saturate(1.14) brightness(.94) sepia(.08)}
+.grao{position:absolute;inset:0;z-index:1;pointer-events:none;background:url(assets/grao.png) repeat;background-size:200px;mix-blend-mode:overlay;opacity:.22}
+.capa .vinheta{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 85% 75% at 50% 50%,rgba(0,0,0,0) 55%,rgba(4,16,36,.42) 100%)}
+.capa::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 50% at 50% 48%,rgba(8,30,62,.62),rgba(8,30,62,0) 78%),linear-gradient(180deg,rgba(8,30,62,.35) 0%,rgba(8,30,62,.1) 40%,rgba(8,30,62,.5) 100%)}
+.capa-t{position:absolute;left:0;right:0;top:50%;transform:translateY(-38%);z-index:2;text-align:center;padding:0 24px}
+.capa h1{line-height:0}
+.capa h1 img{display:inline-block;width:clamp(290px,36vw,560px);height:auto;filter:drop-shadow(0 4px 24px rgba(5,22,48,.55))}
+.capa p{text-shadow:0 2px 18px rgba(0,0,0,.55);margin:22px auto 0;max-width:640px;font-family:"Cormorant",serif;font-style:italic;font-size:clamp(20px,1.9vw,28px);line-height:1.35}
+.capa .btn{margin-top:34px}
+
+/* A POUSADA */
+.pousada{position:relative;z-index:3;background:var(--creme);border-radius:36px 36px 0 0;margin-top:-36px;padding:clamp(90px,10vw,150px) clamp(20px,6vw,100px)}
+.pg{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,96px);align-items:center}
+.moldura{position:relative}
+.moldura::before{content:"";position:absolute;left:28px;top:28px;right:-28px;bottom:-28px;background:var(--areia)}
+.moldura img{position:relative;width:100%;aspect-ratio:4/3.1;object-fit:cover}
+.pousada h2,.sec-t{font-family:"Cormorant",serif;font-weight:500;font-size:clamp(42px,4.6vw,70px);line-height:1.02;letter-spacing:-.01em}
+.txt p{margin-top:26px;font-size:17px;line-height:1.75;color:#4a463e;max-width:480px}
+.fatos{margin-top:40px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linha)}
+.fatos div{padding:20px 14px 0 0}
+.fatos b{display:block;font-family:"Cormorant",serif;font-weight:600;font-size:24px;color:var(--verde)}
+.fatos span{display:block;margin-top:4px;font-size:13px;color:var(--cinza);line-height:1.45}
+
+/* QUARTOS (palavra gigante atrás) */
+.quartos{position:relative;background:var(--creme);padding:clamp(60px,7vw,110px) clamp(20px,5vw,80px) clamp(100px,10vw,150px);overflow:hidden;border-top:1px solid var(--linha)}
+.gigante{font-family:"Cormorant",serif;font-weight:500;font-size:clamp(110px,21vw,370px);line-height:.8;text-align:center;color:var(--verde);letter-spacing:-.02em;white-space:nowrap;user-select:none}
+.gigante span{display:inline-block}
+.q-grid{position:relative;max-width:1180px;margin:clamp(-80px,-5vw,-30px) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,44px);align-items:start}
+.q-grid article:nth-child(2){margin-top:clamp(-40px,-3vw,-20px)}
+.q-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;box-shadow:0 24px 60px rgba(40,30,20,.14)}
+.q-grid h3{margin-top:22px;font-family:"Cormorant",serif;font-weight:600;font-size:clamp(24px,2.1vw,32px);text-align:center}
+.q-grid p{margin-top:8px;text-align:center;font-size:14.5px;line-height:1.6;color:var(--cinza)}
+.q-cta{text-align:center;margin-top:clamp(50px,5vw,70px)}
+.q-inclui{margin-top:18px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinza)}
+
+/* TERRAÇO (faixa azul-marinho) */
+.terraco{position:relative;background:var(--verde);color:#f4eee4;overflow:hidden}
+.terraco .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;filter:saturate(.6)}
+.tg{position:relative;max-width:1180px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,60px);display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:center}
+.tg .fotos{position:relative;height:clamp(420px,42vw,600px)}
+.tg .f1{position:absolute;left:0;top:0;width:78%;height:78%;object-fit:cover;border:10px solid #f4eee4}
+.tg .f2{position:absolute;right:0;bottom:0;width:46%;height:56%;object-fit:cover;border:10px solid #f4eee4}
+.terraco .k{color:var(--ouro)}
+.terraco p{margin-top:26px;font-size:17px;line-height:1.75;color:rgba(244,238,228,.86);max-width:470px}
+.terraco .btn{margin-top:36px}
+
+/* CAFÉ (bloco azul-mar por cima da foto) */
+.cafe{position:relative;height:clamp(560px,52vw,760px);overflow:hidden}
+.cafe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+.cafe .bloco{position:absolute;right:clamp(20px,7vw,120px);top:50%;transform:translateY(-50%);width:min(500px,86vw);background:var(--mar);color:#fff;padding:clamp(34px,4vw,56px)}
+.cafe .k{color:var(--ouro)}
+.cafe h2{font-family:"Cormorant",serif;font-weight:500;font-size:clamp(38px,3.8vw,56px);line-height:1.04}
+.cafe p{margin-top:20px;font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.92)}
+
+/* LOCALIZAÇÃO (lista + foto com bloco atrás) */
+.local{background:var(--creme);padding:clamp(100px,11vw,160px) clamp(20px,6vw,100px)}
+.lg{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.lista{margin-top:34px;border-top:1px solid var(--linha)}
+.lista div{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;border-bottom:1px solid var(--linha)}
+.lista b{font-family:"Cormorant",serif;font-weight:600;font-size:24px}
+.lista span{font-size:13px;letter-spacing:.06em;color:var(--cinza);text-align:right}
+.end{margin-top:26px;font-size:14px;line-height:1.6;color:var(--cinza)}
+.moldura.v::before{left:-28px;right:28px;background:var(--verde)}
+
+/* AVALIAÇÕES */
+.aval{background:var(--areia);padding:clamp(100px,10vw,150px) clamp(20px,5vw,80px);text-align:center}
+.nota{display:inline-flex;align-items:center;gap:16px;margin-top:26px}
+.nota svg{width:34px;height:34px}
+.nota b{font-family:"Cormorant",serif;font-weight:600;font-size:54px;line-height:1}
+.nota .est{color:#e3a72f;font-size:20px;letter-spacing:3px;display:block;text-align:left}
+.nota small{font-size:13px;color:var(--cinza)}
+.deps{max-width:1180px;margin:clamp(50px,5vw,70px) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:left}
+.dep{background:var(--creme);padding:34px 30px}
+.dep .est{color:#e3a72f;letter-spacing:3px;font-size:15px}
+.dep p{margin-top:14px;font-family:"Cormorant",serif;font-style:italic;font-size:22px;line-height:1.4}
+.dep small{display:flex;align-items:center;gap:8px;margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza)}
+.dep small svg{width:16px;height:16px}
+
+/* FINAL + RODAPÉ */
+.final{position:relative;color:#fff;overflow:hidden}
+.final>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.final::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,28,58,.35),rgba(8,28,58,.6) 60%,rgba(7,24,50,.9))}
+.final-t{position:relative;z-index:2;text-align:center;padding:clamp(150px,15vw,230px) 24px clamp(100px,10vw,150px)}
+.final h2{font-family:"Cormorant",serif;font-weight:500;font-size:clamp(50px,6.4vw,104px);line-height:.98}
+.final p{margin:22px auto 0;max-width:520px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.9)}
+.final .btn{margin-top:36px}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.22);display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;padding:46px clamp(20px,5vw,80px) 54px;font-size:14px;line-height:1.75;color:rgba(255,255,255,.8)}
+footer .marca{text-align:left}
+footer .marca img{height:96px;width:auto}
+footer .marca small{color:rgba(255,255,255,.7)}
+footer h4{font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:#fff;margin-bottom:10px;font-weight:600}
+footer .c3{text-align:right}
+
+.zap{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1fa855;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.zap svg{width:28px;height:28px;fill:#fff}
+
+@media (max-width:900px){
+  nav{padding:16px 18px}
+  .nav-links a{display:none}
+  .nav-links a.res{display:inline-block;padding:10px 14px;font-size:11px}
+  .marca img{height:50px}
+  nav.solid .marca img{height:42px}
+  footer .marca img{height:84px;margin:0 auto}
+  .capa{height:100svh;min-height:600px}
+  .capa-img{object-position:var(--mp,55% 50%)}
+  .capa-t{transform:translateY(-30%)}
+  .pousada{border-radius:26px 26px 0 0;margin-top:-26px}
+  .pg,.tg,.lg{grid-template-columns:1fr}
+  .moldura::before{left:16px;top:16px;right:-16px;bottom:-16px}
+  .moldura.v::before{left:-16px;right:16px}
+  .txt,.local .txt{text-align:center}
+  .txt p{margin-left:auto;margin-right:auto}
+  .fatos{text-align:left}
+  .fatos b{font-size:20px}
+  .q-grid{grid-template-columns:1fr;max-width:420px;margin-top:-18px;gap:46px}
+  .q-grid article:nth-child(2){margin-top:0}
+  .tg .fotos{height:420px;order:2}
+  .terraco .txt{text-align:center}
+  .terraco p{margin-left:auto;margin-right:auto}
+  .cafe{height:auto;padding-top:62vw}
+  .cafe img{height:72vw}
+  .cafe .bloco{position:relative;right:auto;top:auto;transform:none;width:auto;margin:0 16px 0}
+  .lg .moldura{order:-1}
+  .lista span{max-width:46%}
+  .deps{grid-template-columns:1fr;max-width:460px}
+  footer{grid-template-columns:1fr;text-align:center}
+  footer .marca{text-align:center}
+  footer .c3{text-align:center}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="wa" viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6C5.5 9.8 10.2 5.1 16 5.1s10.5 4.7 10.5 10.5S21.8 26.2 16 26.2zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5.1 2.8 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.4z"/></symbol>
+<symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
+</defs></svg>
+
+<nav id="nav">
+  <a class="marca" href="#topo"><img src="assets/logo-casa-silva-nav.svg" alt="Pousada Casa Silva"></a>
+  <div class="nav-links"><a href="#quartos">Quartos</a><a href="#terraco">Terraço</a><a href="#local">Localização</a><a href="#avaliacoes">Avaliações</a><a class="res" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20fazer%20uma%20reserva%20na%20Casa%20Silva.">Reservar</a></div>
+</nav>
+
+<header class="capa" id="topo">
+  <picture><source media="(max-width:900px)" srcset="assets/piscina-v.jpg"><img class="capa-img" id="capaImg" src="assets/capa.jpg" alt="Terraço da Casa Silva com piscina e vista para o mar de Jacarecica" fetchpriority="high"></picture>
+  <div class="vinheta"></div><div class="grao"></div>
+  <div class="capa-t">
+    <h1><img id="capaLogo" src="assets/logo-casa-silva.svg" alt="Pousada Casa Silva"></h1>
+    <p class="fade">Uma pousada pequena no alto de Jacarecica, com piscina no terraço e o mar de Maceió na janela</p>
+    <a class="btn cl fade" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20ver%20a%20disponibilidade%20de%20quartos%20na%20Casa%20Silva.%20Minhas%20datas%20s%C3%A3o%3A"><svg><use href="#wa"/></svg>Ver disponibilidade</a>
+  </div>
+</header>
+
+<section class="pousada" id="pousada">
+  <div class="pg">
+    <div class="moldura fade"><img src="assets/quarto-mar.jpg" alt="Quarto com janela de vidro e vista para o mar" loading="lazy"></div>
+    <div class="txt">
+      <span class="k">A pousada</span>
+      <h2 class="split">Acorde com o mar na janela</h2>
+      <p class="fade">A Casa Silva é nova, pequena e tranquila. Os quartos são amplos e climatizados, as camas são das mais elogiadas pelos hóspedes, e do terraço dá pra ver o mar de Jacarecica o dia inteiro.</p>
+      <div class="fatos fade">
+        <div><b>13h às 18h</b><span>Check-in</span></div>
+        <div><b>Café da manhã</b><span>Tapioca, cuscuz e frutas</span></div>
+        <div><b>Vista pro mar</b><span>Nos quartos de cima</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quartos" id="quartos">
+  <div class="gigante" id="gig" aria-hidden="true"><span>Q</span><span>u</span><span>a</span><span>r</span><span>t</span><span>o</span><span>s</span></div>
+  <div class="q-grid">
+    <article class="fade"><img src="assets/quarto-2.jpg" alt="Quarto com cama de casal e de solteiro" loading="lazy"><h3>Casal ou trio</h3><p>Cama de casal e de solteiro, ar-condicionado, frigobar e TV.</p></article>
+    <article class="fade"><img src="assets/quarto-familia.jpg" alt="Quarto amplo para família" loading="lazy" style="object-position:50% 60%"><h3>Para a família</h3><p>Quarto amplo, com espaço de sobra pra quem viaja com os filhos.</p></article>
+    <article class="fade"><img src="assets/sala.jpg" alt="Suíte com sala de estar" loading="lazy" style="object-position:40% 50%"><h3>Suíte com sala</h3><p>Sala de estar com sofá e o quarto no andar de cima.</p></article>
+  </div>
+  <div class="q-cta">
+    <a class="btn fade" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20consultar%20os%20quartos%20e%20os%20valores%20da%20Casa%20Silva."><svg><use href="#wa"/></svg>Consultar quartos e valores</a>
+    <div class="q-inclui fade">Ar-condicionado · Frigobar · TV · Wi-Fi · Café da manhã</div>
+  </div>
+</section>
+
+<section class="terraco" id="terraco">
+  <img class="bgv" src="assets/terraco.jpg" alt="" loading="lazy">
+  <div class="tg">
+    <div class="fotos">
+      <img class="f1 fade" src="assets/piscina.jpg" alt="Piscina com borda de vidro no terraço" loading="lazy">
+      <img class="f2 fade" src="assets/vista-v.jpg" alt="Vista do terraço para o mar" loading="lazy">
+    </div>
+    <div class="txt">
+      <span class="k">O terraço</span>
+      <h2 class="split sec-t">O melhor lugar da casa fica lá em cima</h2>
+      <p class="fade">Piscina com borda de vidro, espreguiçadeiras e o mar de Jacarecica no horizonte. Dá pra começar o dia com um mergulho e terminar vendo o pôr do sol.</p>
+      <a class="btn tr fade" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%2C%20vi%20o%20terra%C3%A7o%20com%20piscina%20e%20quero%20me%20hospedar%20na%20Casa%20Silva."><svg><use href="#wa"/></svg>Quero me hospedar</a>
+    </div>
+  </div>
+</section>
+
+<section class="cafe" id="cafe">
+  <img src="assets/cafe.jpg" alt="Mesa de café da manhã com frutas, tapioca e café" loading="lazy">
+  <div class="bloco fade">
+    <span class="k">Café da manhã</span>
+    <h2 class="split">Café caseiro, com cheiro de casa</h2>
+    <p>Tapioca, cuscuz, mandioca, batata-doce, frutas e bolo, do jeito que os hóspedes contam nas avaliações. E a equipe da casa é sempre muito atenciosa.</p>
+  </div>
+</section>
+
+<section class="local" id="local">
+  <div class="lg">
+    <div class="txt">
+      <span class="k">Localização</span>
+      <h2 class="split sec-t">Perto de tudo, longe do barulho</h2>
+      <div class="lista fade">
+        <div><b>Praia de Jacarecica</b><span>piscinas naturais na maré baixa</span></div>
+        <div><b>Parque Shopping Maceió</b><span>compras e restaurantes</span></div>
+        <div><b>Mercados e farmácias</b><span>tudo pertinho</span></div>
+        <div><b>Orla de Maceió</b><span>Ponta Verde e Pajuçara</span></div>
+      </div>
+      <p class="end fade">R. Vista do Atlântico, 180 · Jacarecica, Maceió · AL</p>
+    </div>
+    <div class="moldura v fade"><img src="assets/praia.jpg" alt="Praia de Jacarecica com piscinas naturais" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="aval" id="avaliacoes">
+  <span class="k">Avaliações</span>
+  <h2 class="split sec-t">Quem fica, volta</h2>
+  <div class="nota fade"><svg><use href="#g"/></svg><b>4,8</b><span><span class="est">★★★★★</span><small>27 avaliações no Google</small></span></div>
+  <div class="deps">
+    <article class="dep fade"><span class="est">★★★★★</span><p>“Tudo muito novo, local tranquilo, de fácil acesso e bem localizado, perto de praias, shopping e mercados.”</p><small><svg><use href="#g"/></svg>Hóspede no Google</small></article>
+    <article class="dep fade"><span class="est">★★★★★</span><p>“As moças da limpeza e da cozinha são muito atenciosas. As camas do quarto são super confortáveis.”</p><small><svg><use href="#g"/></svg>Hóspede no Google</small></article>
+    <article class="dep fade"><span class="est">★★★★★</span><p>“Os quartos são limpos, iluminados e muito confortáveis. A piscina é ótima e bem cuidada.”</p><small><svg><use href="#g"/></svg>Hóspede no Google</small></article>
+  </div>
+</section>
+
+<section class="final" id="contato">
+  <img src="assets/por-do-sol.jpg" alt="Pôr do sol visto do terraço" loading="lazy">
+  <div class="final-t">
+    <span class="k fade" style="color:var(--ouro)">Fim de ano em Maceió</span>
+    <h2 class="split">Reserve direto com a gente</h2>
+    <p class="fade">Dezembro e janeiro lotam rápido. Chama no WhatsApp, fala as datas e quantas pessoas, que a gente te responde com os quartos disponíveis.</p>
+    <a class="btn cl fade" href="https://wa.me/5582991660675?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20quero%20reservar%20na%20Casa%20Silva%20para%20o%20fim%20de%20ano."><svg><use href="#wa"/></svg>Reservar pelo WhatsApp</a>
+  </div>
+  <footer>
+    <div><a class="marca" href="#topo"><img src="assets/logo-casa-silva.svg" alt="Pousada Casa Silva"></a></div>
+    <div><h4>Endereço</h4>R. Vista do Atlântico, 180<br>Jacarecica, Maceió · AL</div>
+    <div class="c3"><h4>Fale com a gente</h4>WhatsApp (82) 99166-0675<br>Check-in das 13h às 18h</div>
+  </footer>
+</section>
+
+<a class="zap" href="https://wa.me/5582991660675?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Casa%20Silva%20e%20queria%20tirar%20uma%20d%C3%BAvida." aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const REC = false;
+let lenis;
+if(!REC && window.Lenis){
+  lenis = new Lenis({lerp:.09});
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();lenis.scrollTo(a.getAttribute('href'),{offset:-60})}));
+}
+if(REC){
+  gsap.ticker.lagSmoothing(0); gsap.ticker.remove(gsap.updateRoot); let t=gsap.globalTimeline.time();
+  window.__step=()=>{t+=1/30; ScrollTrigger.update(); gsap.updateRoot(t);};
+}
+
+const nav=document.getElementById('nav');
+ScrollTrigger.create({start:0,onUpdate:st=>nav.classList.toggle('solid',st.scroll()>innerHeight*.75)});
+
+// títulos em palavras
+document.querySelectorAll('.split').forEach(el=>{
+  const f=document.createDocumentFragment();
+  el.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){f.appendChild(document.createTextNode(' '));return;}
+    const w=document.createElement('span');w.className='w';const i=document.createElement('span');i.className='wi';i.textContent=p;w.appendChild(i);f.appendChild(w);});
+  el.textContent='';el.appendChild(f);
+});
+
+// CAPA: entrada suave
+const hero=gsap.timeline({delay:.15});
+window.__hero=hero;
+hero.from('#capaImg',{opacity:0,duration:1.6,ease:'power2.out'})
+    .from('#capaLogo',{opacity:0,y:34,duration:1.8,ease:'power3.out'},.35)
+    .from('.capa .fade',{opacity:0,y:16,duration:1.4,ease:'power2.out',stagger:.2},.9);
+
+ScrollTrigger.create({trigger:'.capa',start:'top top',end:'bottom top',pin:true,pinSpacing:false});
+// capa fica parada e escurece enquanto "A pousada" sobe como um cartão
+gsap.fromTo('.capa',{filter:'brightness(1)'},{filter:'brightness(.55)',ease:'none',scrollTrigger:{trigger:'.pousada',start:'top bottom',end:'top top',scrub:true}});
+gsap.fromTo('.pousada',{clipPath:'inset(0% 5% 0% 5% round 36px 36px 0 0)'},{clipPath:'inset(0% 0% 0% 0% round 36px 36px 0 0)',ease:'none',scrollTrigger:{trigger:'.pousada',start:'top bottom',end:'top 30%',scrub:true}});
+
+// textos
+document.querySelectorAll('.split').forEach(el=>{
+  if(el.closest('.capa')) return;
+  gsap.from(el.querySelectorAll('.wi'),{yPercent:100,opacity:0,rotate:2.5,duration:1.6,ease:'power4.out',stagger:.045,scrollTrigger:{trigger:el,start:'top 88%'}});
+});
+document.querySelectorAll('.fade').forEach(el=>{
+  if(el.closest('.capa')) return;
+  gsap.from(el,{opacity:0,y:22,duration:1.5,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 92%'}});
+});
+
+// QUARTOS: letras gigantes se aproximam
+gsap.fromTo('#gig span',{x:(i)=>(i-3)*70,opacity:.25},{x:0,opacity:1,ease:'none',scrollTrigger:{trigger:'.quartos',start:'top 85%',end:'top 15%',scrub:true}});
+
+// TERRAÇO: a faixa azul abre como uma persiana do meio
+gsap.fromTo('.terraco',{clipPath:'inset(10% 0% 10% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'none',scrollTrigger:{trigger:'.terraco',start:'top bottom',end:'top 35%',scrub:true}});
+
+// CAFÉ: o bloco azul entra pela direita
+gsap.from('.cafe .bloco',{xPercent:12,opacity:0,duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'.cafe',start:'top 60%'}});
+
+window.addEventListener('load',()=>ScrollTrigger.refresh());
+</script>
+</body>
+</html>
